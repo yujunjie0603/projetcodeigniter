@@ -1,10 +1,15 @@
-Options +FollowSymLinks
-Options +Indexes
-RewriteEngine On
-RewriteBase /
+<IfModule mod_rewrite.c>
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteEngine on
 
-RewriteCond $1 !^(index\.php)
-RewriteRule ^(.*)$ /index.php/$1 [L]
+RewriteCond $1 !^(index\.php|images|css|js|robots\.txt)
+
+RewriteRule ^(.*)$ /projetcodeigniter/index.php/$1 [L]
+
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+
+ErrorDocument 404 /index.php
+
+</IfModule>
