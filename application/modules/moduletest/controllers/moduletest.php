@@ -6,6 +6,9 @@ class moduletest extends MX_Controller {
 	{
 		
 		$this->load->helper('url');
+		$this->load->model('Mdl_user');
+		$values = $this->Mdl_user->getAllUser();
+		var_dump($values->result());
 		$this->load->view('header');
 		$this->load->view('index');
 		$this->load->view('footer');
