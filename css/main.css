@@ -12,6 +12,8 @@
     bottom: 2px;
     background-color: #A5CCE8;
     width: 150px;
+    opacity: .6;
+    margin: auto;
 }
 .banner .dots li {
     display: inline-block;
