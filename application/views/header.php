@@ -9,8 +9,12 @@
 	<TITLE>Projet CodeIgniter Test</TITLE>
 	<script src="<?=base_url();?>js/jquery.js"></script>
 	<script src="<?=base_url();?>js/bootstrap.min.js"></script>
+	<script src="<?=base_url();?>js/unslides.js"></script>
+	<script src="<?=base_url();?>js/jquery.event.move.js"></script>
+	<script src="<?=base_url();?>js/jquery.event.swipe.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 	<link href="<?=base_url();?>css/bootstrap.css" rel="stylesheet">
 	<link href="<?=base_url();?>css/bootstrap-theme.css" rel="stylesheet">
+	<link href="<?=base_url();?>css/main.css" rel="stylesheet">
 </head>
 <body>
