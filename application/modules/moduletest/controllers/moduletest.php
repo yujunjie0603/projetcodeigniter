@@ -7,8 +7,7 @@ class moduletest extends MX_Controller {
 		
 		$this->load->helper('url');
 		$this->load->model('Mdl_user');
-		$values = $this->Mdl_user->getAllUser();
-		var_dump($values->result());
+		//$values = $this->Mdl_user->getAllUser();
 		$data['data_value'] = array('test1' => 123);
 		$data['module'] = 'moduletest';
 		$data['view_file'] = 'index';
