@@ -33,7 +33,7 @@ echo form_open('moduletest/login/auth', $attributes);
 </div>
 <div class="col-lg-6">
 <?php
-echo form_error('email_inscription');
+echo (form_error('email_inscription'));
 echo form_open('moduletest/login/inscription', $attributes);
 
 ?>
