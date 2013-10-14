@@ -6,11 +6,12 @@ $attributes = array('role' => 'form', 'class' => 'form-horizontal');
 <div class="col-lg-6">
 <?php 
 echo validation_errors();
-echo form_open('moduletest/login/auth', $attributes); 
+echo (form_error('check_user'));
+echo form_open('moduletest/login/index', $attributes); 
 ?>
 
 		<div class="form-group">
-			<label class="col-lg-2 control-label">Username</label>
+			<label class="col-lg-2 control-label">Email</label>
 			<div class="col-lg-6">
 				<input type="text" name="email" value="<?php echo set_value('email'); ?>" 
 				size="50"  class="form-control " placeholder="Enter email"/>
@@ -38,7 +39,7 @@ echo form_open('moduletest/login/inscription', $attributes);
 
 ?>
 		<div class="form-group">
-			<label class="col-lg-2 control-label">Username</label>
+			<label class="col-lg-2 control-label">Email</label>
 			<div class="col-lg-6">
 				<input name="email_inscription" value="<?php echo set_value('email_inscription'); ?>" 
 				size="50" type="text" class="form-control " placeholder="Enter email"/>

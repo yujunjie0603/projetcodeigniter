@@ -19,7 +19,7 @@ class Mdl_user extends CI_Model
 
 	 	$this->db->select('*');
 	   	$this->db->from('user');
-	   	$this->db->where('email', $username);
+	   	$this->db->where('email', $email);
 	   	$this->db->where('password', MD5($password));
 	   	$this->db->limit(1);
 	   	$query = $this->db->get();
