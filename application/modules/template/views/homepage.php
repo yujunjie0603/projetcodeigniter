@@ -1,15 +1,14 @@
 <div class="container">
+	<div class="banner">
+	    <ul>
+	        <li style="background-image: url(<?=base_url() . 'images/1.png';?>);">This is a slide.</li>
+	        <li style="background-image: url(<?=base_url() . 'images/2.png';?>);">This is another slide.</li>
+	        <li style="background-image: url(<?=base_url() . 'images/3.png';?>);">This is a final slide.</li>
+	    </ul>
+	</div>
 	<div class="row">
-	  <div class="col-md-2 col-md-push-10">.col-md-2</div>
-	  <div class="col-md-10 col-md-pull-2">
-
-		<div class="banner">
-		    <ul>
-		        <li style="background-image: url(<?=base_url() . 'images/1.png';?>);">This is a slide.</li>
-		        <li style="background-image: url(<?=base_url() . 'images/2.png';?>);">This is another slide.</li>
-		        <li style="background-image: url(<?=base_url() . 'images/3.png';?>);">This is a final slide.</li>
-		    </ul>
-		</div>
+	  <div class="col-md-2">.col-md-2</div>
+	  <div class="col-md-10">
 		<div class="navbar navbar-default">
 			<div class="navbar-header">
 			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
