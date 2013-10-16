@@ -7,7 +7,43 @@
 	    </ul>
 	</div>
 	<div class="row">
-	  <div class="col-md-2">.col-md-2</div>
+	  <div class="col-md-2">
+<?php
+$attributes = array('role' => 'form', 'class' => 'form-horizontal');
+if (!$this->session->userdata('connect')){
+	echo form_open('/moduletest/login/index', $attributes); 
+?>
+		<div class="form-group">
+			<label class="control-label">Email</label>
+			<div class="">
+				<input type="text" name="email" value="<?php echo set_value('email'); ?>" 
+				size="50"  class="form-control " placeholder="Enter email"/>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label">Password</label>
+			<div class="">
+				<input  value="<?php echo set_value('password'); ?>" size="50" type="password" 
+				class="form-control" placeholder="Password"  name="password"/>
+			</div>
+		</div>
+  		<div class="form-group">
+    		<div class="">
+				<button type="submit" class="btn btn-default">Submit</button>
+			</div>
+		</div>
+	</form>
+<?php			
+} else {
+?>
+<div>
+<h4>Bonjour <?=$this->session->userdata['auth'][0]->first_name . " " . $this->session->userdata['auth'][0]->name;?></h4>
+</div>
+<?php	
+}
+?>
+	  </div>
 	  <div class="col-md-10">
 		<div class="navbar navbar-default">
 			<div class="navbar-header">

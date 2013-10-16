@@ -3,6 +3,8 @@ class template extends MX_Controller
 {
 	public function homepage($data)
 	{
+		$this->load->helper(array('form'));
+		$this->load->library('form_validation');
 		$this->load->view('header');
 		$this->load->View('homepage', $data);
 		$this->load->view('footer');
