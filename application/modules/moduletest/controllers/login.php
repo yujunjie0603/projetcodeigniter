@@ -1,42 +1,50 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class login extends MX_Controller {
-	
+
 	public function index()
 	{
-		$this->load->helper(array('form'));
-		$this->load->library('form_validation');		
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_user');
-		if ($this->form_validation->run() == FALSE)	{
+		var_dump($_SERVER['HTTP_REFERER']);
+		if ($this->session->userdata('connect') && $this->session->userdata('auth')) {
+	
+			redirect('/moduletest/', 'refresh');
 		} else {
-			$email = $this->input->post('email');
-			$password = $this->input->post('password');
-			if ($this->check_user($email, $password)) {
-				redirect('/moduletest/', 'refresh');
+
+			$this->load->helper(array('form'));
+			$this->load->library('form_validation');		
+			$this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean');
+			$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
+			if ($this->form_validation->run() == FALSE)	{
 			} else {
-				
+				$email = $this->input->post('email');
+				$password = $this->input->post('password');
+				if ($this->check_user($email, $password)) {
+					redirect('/moduletest/', 'refresh');
+				} else {
+					
+				}
 			}
+			$data['module'] = 'moduletest';
+			$data['view_file'] = "login";
 		}
-		$data['module'] = 'moduletest';
-		$data['view_file'] = "login";
 		echo Modules::run('template/homepage', $data);
 	}
 
-	public function check_user($password)
+	public function check_user($email, $password)
 	{
-		$email = $this->input->post('email');
 		$this->load->helper(array('form'));
 		$this->load->library('form_validation');
 		$this->load->model('Mdl_user');
 		$value = $this->Mdl_user->checkUser($email, $password);
 		if ($value) {
 			$this->session->set_userdata('auth', $value);
+			$this->session->set_userdata('connect', true);
 			return true;
 		}
-		$this->form_validation->set_message('check_user', 'errore sur email ou pwd .');
+		$this->session->set_flashdata('error_login', 'Le login ou le mot de pass est incorrect !');
 		return false;
 	}
+
 	public function inscription()
 	{
 		//$this->load->helper(array('form'));
@@ -57,5 +65,12 @@ class login extends MX_Controller {
 			echo Modules::run('template/homepage', $data);			
 		    echo "ok";
 		}
+	}
+
+	public function logout()
+	{
+		$this->session->unset_userdata('connect');
+		$this->session->unset_userdata('auth');
+		redirect('/moduletest/', 'refresh');
 	}
 }

@@ -7,6 +7,10 @@ $attributes = array('role' => 'form', 'class' => 'form-horizontal');
 <?php 
 echo validation_errors();
 echo (form_error('check_user'));
+if ($this->session->flashdata('error_login')) {
+	echo $this->session->flashdata('error_login');
+}
+
 echo form_open('moduletest/login/index', $attributes); 
 ?>
 

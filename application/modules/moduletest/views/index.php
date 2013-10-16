@@ -4,6 +4,7 @@
 
 //echo Modules::run('nofun/test', 'yulong', "Mr");
 //var_dump($data_value);
+
 ?>
 
 <!-- Main component for a primary marketing message or call to action -->

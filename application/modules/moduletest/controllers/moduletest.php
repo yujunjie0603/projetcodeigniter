@@ -2,6 +2,14 @@
 
 class moduletest extends MX_Controller {
 
+	public function __construct() 
+	{
+        parent::__construct();
+        if(!$this->session->userdata('connect')) {
+
+            redirect('/moduletest/login', 'refresh');
+        }
+    }
 	public function index()
 	{
 		
