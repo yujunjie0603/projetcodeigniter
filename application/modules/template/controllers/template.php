@@ -5,6 +5,9 @@ class template extends MX_Controller
 	{
 		$this->load->helper(array('form'));
 		$this->load->library('form_validation');
+		$this->load->module('category');
+		$listCategoryMenu = $this->category->getListCategory();
+		$data['listCategoryMenu'] = $listCategoryMenu;
 		$this->load->view('header');
 		$this->load->View('homepage', $data);
 		$this->load->view('footer');

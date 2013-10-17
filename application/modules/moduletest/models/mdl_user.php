@@ -11,7 +11,7 @@ class Mdl_user extends CI_Model
 	{
 
 		$query = $this->db->get('user');
-		return $query;
+		return $query->result();
 	}
 
 	public function checkUser($email, $password)
