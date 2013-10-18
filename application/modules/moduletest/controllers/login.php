@@ -4,7 +4,7 @@ class login extends MX_Controller {
 
 	public function index()
 	{
-		var_dump($_SERVER['HTTP_REFERER']);
+		//var_dump($_SERVER['HTTP_REFERER']);
 		if ($this->session->userdata('connect') && $this->session->userdata('auth')) {
 	
 			redirect('/moduletest/', 'refresh');

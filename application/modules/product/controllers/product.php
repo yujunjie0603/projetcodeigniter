@@ -7,6 +7,7 @@ class Product extends MX_Controller
     {
         parent::__construct();
         $this->load->model('Mdl_product');
+        $this->load->model('Mdl_image');
     }
 
     public function index($id="")
@@ -15,6 +16,8 @@ class Product extends MX_Controller
 
             $value = $this->Mdl_product->find(array('id' => $id));
             $data['product'] = $value;
+            $images = $this->Mdl_image->getProductImages($id);
+            $data['productImages'] = $images;
             $data['module'] = 'product';
             $data['view_file'] = "product";
             $data['css'] = array('slider_product.css');

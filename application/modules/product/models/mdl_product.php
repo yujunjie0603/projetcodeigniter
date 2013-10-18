@@ -13,11 +13,11 @@ class Mdl_product extends CI_Model
         return $product->result();
     }
 
-    public function find($where)
+    public function find($aWhere)
     {
         $this->db->select('*');
         $this->db->from('product');
-        $this->db->where($where);
+        $this->db->where($aWhere);
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->result();

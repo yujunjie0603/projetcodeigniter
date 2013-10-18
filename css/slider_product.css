@@ -22,7 +22,7 @@
 	background:url(../images/slider_product/panel.jpg) repeat-x bottom center #ffffff;
 	
 	/* The width of the gallery */
-	width:460px;
+	width:320px;
 	overflow:hidden;
 }
 
@@ -31,7 +31,7 @@
 	height:200px;
 	
 	/* jQuery changes the width later on to the sum of the widths of all the slides. */
-	width:460px;
+	width:320px;
 	overflow:hidden;
 }
 

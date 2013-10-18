@@ -13,7 +13,30 @@
 	<script src="<?=base_url();?>js/jquery.event.move.js"></script>
 	<script src="<?=base_url();?>js/jquery.event.swipe.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<?php
+if (isset($js))
+{
+
+	foreach ($js as $key => $value) {
+?>
+	<script src="<?=base_url();?>js/<?=$value;?>" ></script>
+<?php
+	}
+}
+?>	
 	<link href="<?=base_url();?>css/bootstrap.css" rel="stylesheet">
 	<link href="<?=base_url();?>css/main.css" rel="stylesheet">
+<?php
+if (isset($css))
+{
+
+	foreach ($css as $key => $value) {
+?>
+	<link href="<?=base_url();?>css/<?=$value;?>" rel="stylesheet">
+<?php
+	}
+}
+?>
+
 </head>
 <body>

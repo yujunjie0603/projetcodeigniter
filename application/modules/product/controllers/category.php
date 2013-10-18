@@ -17,9 +17,9 @@ class Category extends MX_Controller
 
             $value = $this->Mdl_category->find($id);
             $data['category'] = $value;
-            $products = $this->Mdl_product->find();
+            $products = $this->Mdl_product->find(array('id_category' => $id));
             $data['view_file'] = "products";
-
+            $data['products'] = $products;
         } else {
 
             $value = $this->Mdl_category->getAllCategory();
@@ -33,10 +33,5 @@ class Category extends MX_Controller
     public function getListCategory()
     {
         return $this->Mdl_category->getAllCategory();
-    }
-
-    public function category()
-    {
-
     }
 }

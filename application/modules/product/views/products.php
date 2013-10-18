@@ -1,16 +1,18 @@
 <div class="row">
 <?php
 $i = 0;
-foreach ($listProduct as $key => $value) {
-    $urlImage = $value->image != "" ? $value->image : 'default.jpg';
-    if ($i >= 3) {
-        $i = 0;
+if (isset($products) && is_array($products)) {
+
+    foreach ($products as $key => $value) {
+        $urlImage = $value->image != "" ? $value->image : 'default.jpg';
+        if ($i >= 3) {
+            $i = 0;
 ?>
 </div>
 <div class="row">
 <?php
-    }
-    $i++;
+        }
+        $i++;
 ?>
     <div class="col-md-4">
         <div class="row ">
@@ -23,6 +25,7 @@ foreach ($listProduct as $key => $value) {
         </div>
     </div>
 <?php
+    }
 }
 ?>
 </div>
