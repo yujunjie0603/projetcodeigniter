@@ -1,0 +1,136 @@
+
+/* Gallery styles */
+
+.slider_product #gallery{
+	/* CSS3 Box Shadow */
+	-moz-box-shadow:0 0 3px #AAAAAA;
+	-webkit-box-shadow:0 0 3px #AAAAAA;
+	box-shadow:0 0 3px #AAAAAA;
+	
+	/* CSS3 Rounded Corners */
+	
+	-moz-border-radius-bottomleft:4px;
+	-webkit-border-bottom-left-radius:4px;
+	border-bottom-left-radius:4px;
+	
+	-moz-border-radius-bottomright:4px;
+	-webkit-border-bottom-right-radius:4px;
+	border-bottom-right-radius:4px;
+	
+	border:1px solid white;
+	
+	background:url(../images/slider_product/panel.jpg) repeat-x bottom center #ffffff;
+	
+	/* The width of the gallery */
+	width:460px;
+	overflow:hidden;
+}
+
+.slider_product #slides{
+	/* This is the slide area */
+	height:200px;
+	
+	/* jQuery changes the width later on to the sum of the widths of all the slides. */
+	width:460px;
+	overflow:hidden;
+}
+
+.slider_product .slide{
+	float:left;
+}
+
+.slider_product #menu{
+	/* This is the container for the thumbnails */
+	height:45px;
+}
+
+.slider_product ul{
+	margin:0px;
+	padding:0px;
+}
+
+.slider_product li{
+	/* Every thumbnail is a li element */
+	width:60px;
+	display:inline-block;
+	list-style:none;
+	height:45px;
+	overflow:hidden;
+}
+
+.slider_product li.inact:hover{
+	/* The inactive state, highlighted on mouse over */
+	background:url(../images/slider_product/pic_bg.png) repeat;
+}
+
+.slider_product li.act,.slider_product li.act:hover{
+	/* The active state of the thumb */
+	background:url(../images/slider_product/active_bg.png) no-repeat;
+}
+
+.slider_product li.act a{
+	cursor:default;
+}
+
+.slider_product .fbar{
+	/* The left-most vertical bar, next to the first thumbnail */
+	width:2px;
+	height: 35px;
+	margin: 0px;
+	padding: 0px;
+	background:url(../images/slider_product/divider.png) no-repeat right;
+}
+
+.slider_product li a{
+	display:block;
+	background:url(../images/slider_product/divider.png) no-repeat right;
+	height:35px;
+	padding-top:10px;
+}
+
+.slider_product a img{
+	border:none;
+}
+
+
+/* The styles below are only necessary for the demo page */
+
+.slider_product h1{
+	font-family:"Myriad Pro",Arial,Helvetica,sans-serif;
+	font-size:36px;
+	font-weight:normal;
+	margin-bottom:15px;
+}
+
+.slider_product h2{
+	font-family:"Myriad Pro",Arial,Helvetica,sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	position:absolute;
+	right:0;
+	text-transform:uppercase;
+	top:15px;
+}
+
+.slider_product {
+	/* The main container */
+	margin:15px auto;
+	text-align:center;
+	width:920px;
+	position:relative;
+}
+
+.slider_product a, a:visited {
+	color:#0196e3;
+	text-decoration:none;
+	outline:none;
+}
+
+.slider_product a:hover{
+	text-decoration:underline;
+}
+
+.slider_product p{
+	padding:10px;
+	text-align:center;
+}
