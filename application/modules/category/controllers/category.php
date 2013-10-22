@@ -6,7 +6,6 @@ class Category extends MX_Controller
     public function __construct() 
     {
         parent::__construct();
-        exit('test');
         $this->load->model('Mdl_category');
         $this->load->model('Mdl_product');
     }
@@ -19,15 +18,15 @@ class Category extends MX_Controller
             $value = $this->Mdl_category->find($id);
             $data['category'] = $value;
             $products = $this->Mdl_product->find(array('id_category' => $id));
-            $data['view_file'] = "index";
+            $data['view_file'] = "products";
             $data['products'] = $products;
         } else {
 
             $value = $this->Mdl_category->getAllCategory();
             $data['listCategory'] = $value;
-            $data['view_file'] = "categorys";
+            $data['view_file'] = "index";
         }
-        $data['module'] = 'product';
+        $data['module'] = 'category';
         echo Modules::run('template/homepage', $data);
     }
 

@@ -6,7 +6,6 @@ class Product extends MX_Controller
     public function __construct()
     {
         parent::__construct();
-        exit('test2');
         $this->load->model('Mdl_product');
         $this->load->model('Mdl_image');
     }
@@ -19,7 +18,7 @@ class Product extends MX_Controller
             $data['product'] = $value;
             $images = $this->Mdl_image->getProductImages($id);
             $data['productImages'] = $images;
-            $data['module'] = 'product';
+            $data['module'] = 'category';
             $data['view_file'] = "product";
             $data['css'] = array('slider_product.css');
             $data['js'] = array('slider_product.js');

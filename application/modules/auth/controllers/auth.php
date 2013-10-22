@@ -33,6 +33,7 @@ class auth extends MX_Controller {
 			$data['module'] = 'auth';
 			$data['view_file'] = "login";
 		}
+
 		echo Modules::run('template/homepage', $data);
 	}
 

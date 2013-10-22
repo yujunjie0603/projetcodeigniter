@@ -5,7 +5,7 @@ class template extends MX_Controller
 	{
 		$this->load->helper(array('form'));
 		$this->load->library('form_validation');
-		$this->load->module('product/category');
+		$this->load->module('category/category');
 		$listCategoryMenu = $this->category->getListCategory();
 		$data['listCategoryMenu'] = $listCategoryMenu;
 		$dataHead = array();

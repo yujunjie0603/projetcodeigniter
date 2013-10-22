@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="slider_product">
             <div id="gallery">
 
@@ -28,7 +28,7 @@ foreach ($productImages as $key => $value) {
             </div>
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-8">
         <h4>pro 1 </h4>
         <p>sdsdf sdf qs qsfqs fs</p>
     </div>

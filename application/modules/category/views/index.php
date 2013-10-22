@@ -15,7 +15,7 @@ foreach ($listCategory as $key => $value) {
     <div class="col-md-4">
         <div class="row ">
             <div class="text-center">
-                <a href="<?=site_url('product/category/index/' . $value->id);?>"><img width="150", src="<?=base_url() . 'images/category/' . $urlImage;?>" class="img-thumbnail"/></a>
+                <a href="<?=site_url('category/category/index/' . $value->id);?>"><img width="150", src="<?=base_url() . 'images/category/' . $urlImage;?>" class="img-thumbnail"/></a>
             </div>
         </div>
         <div class="row text-center">

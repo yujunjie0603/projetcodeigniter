@@ -11,7 +11,7 @@
 <?php
 $attributes = array('role' => 'form', 'class' => 'form-horizontal');
 if (!$this->session->userdata('connect')){
-	echo form_open('/moduletest/login/index', $attributes); 
+	echo form_open('/auth/auth/index', $attributes); 
 ?>
 		<div class="form-group">
 			<label class="control-label">Email</label>
@@ -64,7 +64,7 @@ if (isset($listCategoryMenu)) {
 	}
 }
 ?>					      	
-					        <li><a href="<?=base_url() . 'product/category';?>">Another action</a></li>
+					        <li><a href="<?=base_url() . 'category/category';?>">Another action</a></li>
 					        <li><a href="">Something else here</a></li>
 					        <li class="divider"></li>
 					        <li class="dropdown-header">Nav header</li>
@@ -82,7 +82,7 @@ if (isset($listCategoryMenu)) {
 <?php
 if ($this->session->userdata('connect')){
 ?>					    
-					    <li><a href="<?=base_url() . 'moduletest/login/logout';?>">Deconnecter</a></li>
+					    <li><a href="<?=base_url() . 'auth/auth/logout';?>">Deconnecter</a></li>
 <?php
 }
 ?>					    

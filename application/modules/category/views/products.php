@@ -17,7 +17,7 @@ if (isset($products) && is_array($products)) {
     <div class="col-md-4">
         <div class="row ">
             <div class="text-center">
-                <a href="<?=site_url('product/product/index/' . $value->id);?>"><img width="150", src="<?=base_url() . 'images/product/' . $urlImage;?>" class="img-thumbnail"/></a>
+                <a href="<?=site_url('category/product/index/' . $value->id);?>"><img width="150", src="<?=base_url() . 'images/product/' . $urlImage;?>" class="img-thumbnail"/></a>
             </div>
         </div>
         <div class="row text-center">
