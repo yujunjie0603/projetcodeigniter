@@ -20,10 +20,19 @@ class template extends MX_Controller
 		$this->load->view('footer');
 	}
 
-	public function produit()
+	public function admin($data)
 	{
-		$this->load->view('header');
-		$this->load->View('produit');
-		$this->load->view('footer');
+		$this->load->helper(array('form'));
+		$this->load->library('form_validation');
+		$dataHead = array();
+		if (isset($data['css'])) {
+			$dataHead['css'] = $data['css'];
+		}
+		if (isset($data['js'])) {
+			$dataHead['js'] = $data['js'];
+		}
+		$this->load->view('header_admin', $dataHead);
+		$this->load->View('admin', $data);
+		$this->load->view('footer_admin');
 	}	
 }

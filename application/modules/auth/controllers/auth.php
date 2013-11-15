@@ -46,6 +46,9 @@ class auth extends MX_Controller {
 		if ($value) {
 			$this->session->set_userdata('auth', $value);
 			$this->session->set_userdata('connect', true);
+			if ($value[0]->style == 1) {
+				$this->session->set_userdata('admin', true);
+			}
 			return true;
 		}
 		$this->session->set_flashdata('error_login', 'Le login ou le mot de pass est incorrect !');
@@ -78,6 +81,7 @@ class auth extends MX_Controller {
 	{
 		$this->session->unset_userdata('connect');
 		$this->session->unset_userdata('auth');
+		$this->session->unset_userdata('admin');
 		redirect('/auth/', 'refresh');
 	}
 }

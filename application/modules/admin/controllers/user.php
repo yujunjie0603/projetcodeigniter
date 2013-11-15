@@ -15,4 +15,17 @@ class User extends MX_Controller
 		$data['view_file'] = "user";
 		echo Modules::run('template/admin/index', $data);		
 	}
+
+	public function edit($id="")
+	{
+		$user = array();
+		if ($id) {
+			$user = $this->Mdl_user->find($id);
+		}
+
+		$data['user'] = $user;
+        $data['module'] = 'admin';
+        $data['view_file'] = "edit";
+        echo Modules::run('template/Template_Admin/home', $data);
+	}
 }

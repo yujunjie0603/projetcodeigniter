@@ -23,9 +23,11 @@ class Mdl_user extends CI_Model
         }
 	}
 
-	public function find($aWhere)
+	public function find($id)
 	{
-
+        $this->db->where('id', $id);
+        $query = $this->db->get('user');
+        return $query->result();
 	}
 
     public function active($id)
