@@ -17,7 +17,7 @@ foreach ($listUser as $key => $user) {
             <td><?=$user->email;?></td>
             <td><?=$user->name;?></td>
             <td><?=$user->style;?></td>
-            <td>Modifier</td>
+            <td><a>Modifier</a></td>
             <td>Supprimer</td>
         </tr>
 <?php

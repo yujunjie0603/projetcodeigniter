@@ -13,7 +13,8 @@ class User extends MX_Controller
 		$listUser = $this->Mdl_user->getAllUser();
 		$data['module'] = 'admin';
 		$data['view_file'] = "user";
-		echo Modules::run('template/admin/index', $data);		
+		$data['listUser'] = $listUser;
+		echo Modules::run('template/Template_Admin/home', $data);		
 	}
 
 	public function edit($id="")
