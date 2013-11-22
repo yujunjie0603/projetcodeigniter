@@ -6,6 +6,8 @@ class User extends MX_Controller
 	{
 		parent::__construct();
 		$this->load->model('Mdl_user');
+		$this->load->helper(array('form', 'url'));
+		$this->load->library('form_validation');		
 	}
 
 	public function index()
@@ -23,6 +25,13 @@ class User extends MX_Controller
 		if ($id) {
 			$user = $this->Mdl_user->find($id);
 		}
+
+		$this->form_validation->set_rules('nom', 'nom', 'trim');
+		$this->form_validation->set_rules('prenom', 'Prenom', 'trim');
+		$this->form_validation->set_rules('date_naissance_jour', 'Date_naissance_jour', 'trim');
+		$this->form_validation->set_rules('date_naissance_mois', 'Date_naissance_mois', 'trim');
+		$this->form_validation->set_rules('date_naissance_annee', 'Date_naissance_annee', 'trim');
+		$this->form_validation->set_rules('sex', 'Sex', 'trim');
 
 		$data['user'] = $user;
         $data['module'] = 'admin';
